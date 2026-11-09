@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крестики-Нолики</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Крестики-Нолики</h1>
+        
+        <!-- Блок авторизации -->
+        <div id="auth-panel" class="auth-panel">
+            <div style="display: flex; justify-content: space-around; margin-bottom: 15px;">
+                <span id="tab-login" style="cursor: pointer; border-bottom: 2px solid var(--x-color); padding-bottom: 5px; font-weight: bold;">Вход</span>
+                <span id="tab-register" style="cursor: pointer; color: #888; padding-bottom: 5px;">Регистрация</span>
+            </div>
+
+            <div id="form-login" class="auth-panel">
+                <input type="text" id="login-input" placeholder="Логин" value="testuser">
+                <input type="password" id="password-input" placeholder="Пароль" value="123">
+                <button id="login-btn" class="primary">Войти</button>
+            </div>
+
+            <div id="form-register" class="auth-panel" style="display: none;">
+                <input type="text" id="reg-login-input" placeholder="Придумайте логин">
+                <input type="password" id="reg-password-input" placeholder="Придумайте пароль">
+                <button id="register-btn" class="primary">Зарегистрироваться</button>
+                <div id="reg-message" style="color: var(--x-color); font-size: 0.85rem; min-height: 1rem;"></div>
+            </div>
+        </div>
+
+        <!-- Главное меню -->
+        <div id="menu-panel" class="auth-panel" style="display: none;">
+            <button id="btn-play-bot">Игра с компьютером</button>
+            <button id="btn-play-multiplayer">Создать игру с другом</button>
+            <button id="btn-join-game">Присоединиться к игре</button>
+            <button id="btn-history">История игр</button>
+            <button id="btn-leaderboard">Таблица лидеров</button>
+            <button id="logout-btn" style="margin-top: 10px; color: var(--o-color); border-color: var(--o-color);">Выйти</button>
+        </div>
+
+        <!-- Список доступных игр -->
+        <div id="available-games-panel" class="auth-panel" style="display: none;">
+            <h3>Доступные игры</h3>
+            <div id="games-list" class="list-container"></div>
+            <button id="btn-back-to-menu">Назад</button>
+        </div>
+
+        <!-- История игр -->
+        <div id="history-panel" class="auth-panel" style="display: none;">
+            <h3>История ваших игр</h3>
+            <div id="history-list" class="list-container"></div>
+            <button id="btn-history-back">Назад</button>
+        </div>
+
+        <!-- Таблица лидеров -->
+        <div id="leaderboard-panel" class="auth-panel" style="display: none;">
+            <h3>Топ игроков</h3>
+            <div id="leaderboard-list" class="list-container"></div>
+            <button id="btn-leaderboard-back">Назад</button>
+        </div>
+
+        <!-- Игровая панель -->
+        <div id="game-panel" style="display: none;">
+            <div id="players-info" class="players-info">
+                <div class="player-tag">Вы: <span id="p1-name">...</span></div>
+                <div class="vs-text">vs</div>
+                <div class="player-tag" style="align-items: flex-end;">Противник: <span id="p2-name">...</span></div>
+            </div>
+
+            <div id="status" class="status">Загрузка...</div>
+            <div id="board" class="board"></div>
+            <button id="restart">В главное меню</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
